@@ -1,0 +1,74 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Busqueda de Investigadores</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <a class="navbar-brand" th:href="@{/authors}">Digital NAO Reto 2</a>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a th:href="@{/authors}" class="nav-link">Detalle de Investigadores</a></li>
+        </ul>
+    </div>
+</nav>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class="text-center">Búsqueda de Investigador</h1>
+            <div class="card-body">
+                <form th:action="@{/authors}" th:object="${author}" method="POST">
+                    <div class="form-group">
+                        <h2>SerpApi Integration </h2>
+                        <br>
+                        <p>IMPORTANTE: El nombre correcto garantizará su búsqueda. Si existe mas de un investigador
+                            con el mismo nombre, deberá buscar por ID de Author</p>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" name="name" th:field="*{name}" class="form-control"
+                                       placeholder="Full Name"
+                                       aria-label="name">
+                            </div>
+                            <div class="col">
+                                <input type="text" name="author_ID" th:field="*{author_ID}" class="form-control"
+                                       placeholder="ID Author" aria-label="ID Author">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-success">Buscar Name</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-success">Buscar ID</button>
+                        </div>
+                    </div>
+                </form>
+
+                <label>(si tiene dudas, puede buscarlo en los siguientes links):</label>
+                <br>
+                <br>
+                <h3>Búsqueda con SerpAPI</h3>
+                <br>
+                <a target="_blank" class="btn btn-primary"
+                   th:href="@{https://serpapi.com/playground?engine=google_scholar_profiles&mauthors=NOMBRE_INVESTIGADOR&hl=en&newPara=affiliations}">Buscar
+                    Investigador por Nombre</a>
+                <br>
+                <br>
+                <a target="_blank" class="btn btn-secondary"
+                   th:href="@{https://serpapi.com/playground?engine=google_scholar_author&author_id=ID_AUTHOR&hl=en&newPara=affiliaitions}">Buscar
+                    Investigador por Id de Author</a>
+                <br>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
