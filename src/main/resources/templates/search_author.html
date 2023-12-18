@@ -26,25 +26,14 @@
                     <div class="form-group">
                         <h2>SerpApi Integration </h2>
                         <br>
-                        <p>IMPORTANTE: El nombre correcto garantizará su búsqueda. Si existe mas de un investigador
-                            con el mismo nombre, deberá buscar por ID de Author</p>
-                        <div class="row">
-                            <div class="col">
-                                <input type="text" name="name" th:field="*{name}" class="form-control"
-                                       placeholder="Full Name"
-                                       aria-label="name">
-                            </div>
+                        <p>Por favor ingrese el ID de Author</p>
                             <div class="col">
                                 <input type="text" name="author_ID" th:field="*{author_ID}" class="form-control"
-                                       placeholder="ID Author" aria-label="ID Author">
+                                       placeholder="ID Author" aria-label="ID Author" required>
                             </div>
-                        </div>
                     </div>
                     <br>
                     <div class="row">
-                        <div class="col">
-                            <button class="btn btn-success">Buscar Name</button>
-                        </div>
                         <div class="col">
                             <button class="btn btn-success">Buscar ID</button>
                         </div>
@@ -65,6 +54,24 @@
                    th:href="@{https://serpapi.com/playground?engine=google_scholar_author&author_id=ID_AUTHOR&hl=en&newPara=affiliaitions}">Buscar
                     Investigador por Id de Author</a>
                 <br>
+                <br>
+                <h3>Investigadores TOP10 Históricos</h3>
+                <br>
+                <label>JgxAIwIAAAAJ</label>
+                <br>
+                <label>nINUMRoAAAAJ</label>
+                <br>
+                <label>HN0EKLIAAAAJ</label>
+                <br>
+                <label>NoCQeCcAAAAJ</label>
+                <br>
+                <label>IdMf1V7YL6MC</label>
+                <br>
+                <label>EvrBXwkAAAAJ</label>
+                <br>
+                <label>BmLc9UAAAAAJ</label>
+                <br>
+                <label>JiiMY_wAAAAJ</label>
 
             </div>
         </div>

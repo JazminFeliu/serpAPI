@@ -46,7 +46,7 @@ public class AuthorService {
 
         Map<String, String> parameter = new HashMap<>();
 
-        parameter.put("api_key", "ingrese su api_key");
+        parameter.put("api_key", "tu API_KEY aqui");
         parameter.put("engine", "google_scholar_profiles");
         parameter.put("hl", "en");
         parameter.put("mauthors", name);
@@ -64,6 +64,7 @@ public class AuthorService {
             con.setRequestProperty("Content-Type", "application/json");
             con.connect();
             int resCod = con.getResponseCode();
+            System.out.println(resCod);
             if (resCod != 200) {
                 throw new RuntimeException("Ocurrió un error: " + resCod);
             } else {
@@ -103,7 +104,7 @@ public class AuthorService {
         author.setAuthor_ID(idAuthor);
         Map<String, String> parameter = new HashMap<>();
 
-        parameter.put("api_key", "ingrese su api_key");
+        parameter.put("api_key", "tu API_KEY aqui");
         parameter.put("engine", "google_scholar_author");
         parameter.put("hl", "en");
         parameter.put("author_id", idAuthor);

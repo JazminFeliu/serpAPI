@@ -40,7 +40,6 @@
             <th>Email</th>
             <th>Author URL</th>
             <th>Affiliations</th>
-            <th>Total Articles</th>
             <th>Acciones</th>
             <th></th>
         </tr>
@@ -53,7 +52,6 @@
             <td th:text="${author.email}">Email</td>
             <td th:text="${author.author_url}">Author URL</td>
             <td th:text="${author.affiliations}">Affiliations</td>
-            <td th:text="${author.tarticles}">Total Articles</td>
             <td >
                 <a th:href="@{/authors/edit/{id}(id=${author.id})}" class="btn btn-light">Edit</a></td>
                 <td><a th:href="@{/authors/{id}(id=${author.id})}" class="btn btn-danger">Delete</a>

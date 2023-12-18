@@ -22,16 +22,17 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-            <h1 class="text-center">Búsqueda de Investigador</h1>
+            <h1 class="text-center">Editar Investigador</h1>
             <div class="card-body">
                 <form th:action="@{/authors/{id}(id=${author.id})}" th:object="${author}" method="POST">
                     <div class="form-group">
                         <div class="row">
                             <div class="col">
                                 <input type="text" name="name" th:field="*{name}" class="form-control"
-                                       placeholder="Full Name" aria-label="name">
+                                       placeholder="Name" aria-label="Name">
                                 <br>
                             </div>
+
                             <div class="col">
                                 <input type="text" name="author_ID" th:field="*{author_ID}" class="form-control"
                                        placeholder="ID Author" aria-label="ID Author">
@@ -55,10 +56,6 @@
                                 <input type="text" name="affiliations" th:field="*{affiliations}" class="form-control"
                                        placeholder="Affiliations" aria-label="Affiliations">
                                 <br>
-                            </div>
-                            <div class="col">
-                                <input type="integer" name="tarcicles" th:field="*{tarticles}" class="form-control"
-                                       placeholder="Total articles" aria-label="Total articles">
                             </div>
                         </div>
                     </div>
